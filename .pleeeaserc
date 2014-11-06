@@ -1,0 +1,4 @@
+{
+  "in": "css/site.css",
+  "out": "css/site.min.css"
+}
