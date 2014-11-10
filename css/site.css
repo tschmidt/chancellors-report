@@ -60,6 +60,12 @@ section h3 {
   margin: auto;
 }
 
+.heading-centered {
+  text-align: center;
+  margin-bottom: 110px;
+  letter-spacing: 3px;
+}
+
 /*
     Keyframes
 */
@@ -164,12 +170,6 @@ section h3 {
   padding: 240px 0 220px;
 }
 
-#three h3 {
-  text-align: center;
-  margin-bottom: 110px;
-  letter-spacing: 3px;
-}
-
 #three figure {
   margin: 0 0 30px;
   position: relative;
@@ -205,4 +205,44 @@ section h3 {
   opacity: 1;
   transform: translateY(0px);
   transition: transform 0.4s, opacity 0.1s;
+}
+
+#four .overlay {
+  visibility: hidden;
+  opacity: 0;
+  backface-visibility: hidden;
+  transition: opacity 0.5s, transform 0.4s, visibility 0s 0.5s;
+  transform: scale(1.3);
+  
+  color: #fff;
+  padding: 17.14rem;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(236, 172, 0, .9);
+  z-index: 1090;
+}
+
+#four .overlay.open {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s, transform 0.4s;
+}
+
+#four .overlay .overlay-close {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  overflow: hidden;
+  text-indent: 200%;
+  border: none;
+  background: url(../img/cross.png) no-repeat center center;
+  color: transparent;
+  outline: none;
+  z-index: 100;
 }

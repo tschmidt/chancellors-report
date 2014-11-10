@@ -11,7 +11,7 @@ $(document).ready(function () {
   
   
   // Fade in the navbar after the intro have been scrolled
-  var $mainNav = $('body > nav');
+  var $mainNav = $('body > .content-container > nav');
   var $intro = $('#intro');
   $mainNav.hide();
   $(window).on('scroll', function () {
@@ -20,5 +20,17 @@ $(document).ready(function () {
     } else {
       $mainNav.fadeOut();
     }
+  });
+  
+  $('.overlay-trigger').on('click', function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    $('.overlay').removeClass('open');
+    $this.siblings('.overlay').addClass('open');
+  });
+  
+  $('.overlay-close').on('click', function (e) {
+    e.preventDefault();
+    $(this).parent().removeClass('open');
   });
 });
