@@ -12,18 +12,52 @@ body > section {
   overflow: hidden;
 }
 
+img {
+  max-width: 100%;
+}
+
 /*
     Utility classes
 */
 
+section {
+  position: relative;
+}
+
+section h3 {
+  font-weight: 100;
+  font-size: 3.75rem;
+}
+
 .fullscreen {
-  width: 100vw;
   min-height: 100vh;
 }
 
 .not-fullscreen {
   height: auto;
   overflow: hidden;
+}
+
+.halfscreen {
+  min-height: 50vh;
+}
+
+.wrap-vertical {
+  padding-top: 8.471rem;
+  padding-bottom: 8.471rem;
+}
+
+.wrap-horizontal {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.wrap-centered {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
 }
 
 /*
@@ -98,6 +132,7 @@ body > section {
   animation-fill-mode: forwards;
   opacity: 0;
   font-size: 5rem;
+  font-weight: 100;
   position: absolute;
   top: 30.363rem; right: 8.57rem;
 }
@@ -119,4 +154,48 @@ body > section {
   padding-top: 10px;
   fill: rgb(236, 172, 0);
   display: block;
+}
+
+#building {
+  background: transparent url('../img/coleman-building.jpg') no-repeat center center;
+}
+
+#three {
+  padding: 240px 0 220px;
+}
+
+#three figure {
+  margin: 0 0 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+#three figure img {
+  display: block;
+  position: relative;
+  transition: transform 0.4s;
+}
+
+#three figure:hover img {
+  transform: translateY(-50px);
+}
+
+#three figure figcaption {
+  background: #353535;
+  color: #fff;
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  padding: 15px;
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+#three figure:hover figcaption {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: transform 0.4s, opacity 0.1s;
 }
