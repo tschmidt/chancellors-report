@@ -164,6 +164,12 @@ section h3 {
   padding: 240px 0 220px;
 }
 
+#three h3 {
+  text-align: center;
+  margin-bottom: 110px;
+  letter-spacing: 3px;
+}
+
 #three figure {
   margin: 0 0 30px;
   position: relative;
@@ -174,6 +180,7 @@ section h3 {
   display: block;
   position: relative;
   transition: transform 0.4s;
+  backface-visibility: hidden;
 }
 
 #three figure:hover img {
@@ -184,7 +191,7 @@ section h3 {
   background: #353535;
   color: #fff;
   position: absolute;
-  height: 100px;
+  height: 80%;
   width: 100%;
   padding: 15px;
   top: auto;
