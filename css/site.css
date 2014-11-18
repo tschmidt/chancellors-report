@@ -1,89 +1,115 @@
-*, *::before, *::after {
+/*
+    Document Setup
+*/
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
+  color: #757575;
   position: relative;
-}
-
-body > section {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
 }
 
 img {
   max-width: 100%;
 }
 
+blockquote {
+  border: none;
+}
+
+p {
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
 /*
-    Utility classes
+    Utility Classes
 */
-
-section {
-  position: relative;
-}
-
-section h3 {
-  font-weight: 100;
-  font-size: 3.75rem;
-}
 
 .fullscreen {
   min-height: 100vh;
-}
-
-.not-fullscreen {
-  height: auto;
-  overflow: hidden;
 }
 
 .halfscreen {
   min-height: 50vh;
 }
 
-.wrap-vertical {
-  padding-top: 8.471rem;
-  padding-bottom: 8.471rem;
+.background {
+  overflow: hidden;
 }
 
-.wrap-horizontal {
-  padding-left: 7%;
-  padding-right: 7%;
+.section-intro {
+  height: 50vh;
 }
 
-.wrap-centered {
+.vertical-wrap {
   position: absolute;
+  height: 200px;
   top: 0; right: 0; bottom: 0; left: 0;
-  max-width: 100%;
-  max-height: 100%;
   margin: auto;
+  padding: 90px 0;
 }
 
-.heading-centered {
+.poloroid {
+  border-radius: 2px;
+  border: 1px solid #9c9c9c;
+  padding: 7px;
+  padding-bottom: 65px;
+}
+
+.poloroid span {
+  background-color: #353535;
+  display: block;
+}
+
+.section-intro {
+  width: 100%;
+  height: 350px;
+  margin: 120px 0;
+}
+
+.section-intro h2 {
   text-align: center;
-  margin-bottom: 110px;
-  letter-spacing: 3px;
+  line-height: 350px;
+  font-size: 13rem;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0,0,0,.8);
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  padding: 90px 40px;
+  margin: 0 auto;
+  width: 80%;
 }
 
 /*
-    Keyframes
+    Animation Keyframes
 */
 
-@keyframes introFadeIn {
+@keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-@keyframes introFadeInFromTop {
-  from {
-    opacity: 0;
-    transform: translate3d(90px, 0, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes bounce {
@@ -111,39 +137,73 @@ section h3 {
 }
 
 /*
-    Section: Intro
+    Section: Factoids
 */
 
-#intro {
-  background: transparent url('../img/welding.jpg') no-repeat center center;
-  opacity: 0;
-  animation: introFadeIn 3s ease .75s;
-  animation-fill-mode: forwards;
+.factoid {
   color: rgb(236, 172, 0);
-  text-shadow: 0 1px 1px rgba(0,0,0,.7);
   position: relative;
 }
 
-#intro h1 {
-  animation: introFadeInFromTop 3s ease-in-out .8s;
+.factoid .impressive > p {
+  font-size: 22rem;
+  position: relative;
+}
+
+.factoid .impressive-support {
+  color: #757575;
+  line-height: 1;
+  display: block;
+}
+
+.factoid sup {
+  font-size: .55em;
+}
+
+/*
+    Section: Lead-In
+*/
+
+#lead-in {
+  background: transparent url('../img/welding.jpg') no-repeat center center;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 3s ease 0s;
   animation-fill-mode: forwards;
+  backface-visibility: none;
+}
+
+#lead-in header {
+  color: #FFF;
+  text-shadow: 0 0 5px black;
+  letter-spacing: 3px;
+  height: 200px;
+  width: 100%;
+  text-align: center;
   position: absolute;
-  top: 21.42rem; right: 8.57rem;
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+}
+
+#lead-in header h1 {
   font-size: 6rem;
+  margin: 0;
+  padding: 30px 0;
   opacity: 0;
-}
-
-#intro h2 {
-  animation: introFadeInFromTop 3s ease-in-out 1.2s;
+  animation: fadeInUp 1.2s ease 1s;
   animation-fill-mode: forwards;
-  opacity: 0;
-  font-size: 5rem;
-  font-weight: 100;
-  position: absolute;
-  top: 30.363rem; right: 8.57rem;
 }
 
-#intro .scroll-hint {
+#lead-in header h2 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease 1.1s;
+  animation-fill-mode: forwards;
+}
+
+#lead-in .scroll-hint {
   background: rgba(0,0,0, .5);
   display: block;
   width: 50px; height: 50px;
@@ -154,7 +214,7 @@ section h3 {
   margin-left: -25px;
 }
 
-#intro .scroll-hint svg {
+#lead-in .scroll-hint svg {
   width: 80%; height: 80%;
   margin: auto;
   padding-top: 10px;
@@ -162,87 +222,191 @@ section h3 {
   display: block;
 }
 
-#building {
-  background: transparent url('../img/coleman-building.jpg') no-repeat center center;
-}
+/*
+    Section: Welcome
+*/
 
-#three {
-  padding: 240px 0 220px;
-}
-
-#three figure {
-  margin: 0 0 30px;
+#welcome {
   position: relative;
-  overflow: hidden;
 }
 
-#three figure img {
-  display: block;
-  position: relative;
-  transition: transform 0.4s;
+#welcome .vertical-wrap {
+  width: 80%;
+}
+
+#welcome .poloroid {
+  transform: rotate(7deg) translateY(-35px);
   backface-visibility: hidden;
 }
 
-#three figure:hover img {
-  transform: translateY(-50px);
-}
-
-#three figure figcaption {
-  background: #353535;
-  color: #fff;
-  position: absolute;
-  height: 80%;
-  width: 100%;
-  padding: 15px;
-  top: auto;
-  bottom: 0;
+#welcome .poloroid-init {
   opacity: 0;
-  transform: translateY(100%);
-  transition: transform 0.4s, opacity 0.1s 0.3s;
 }
 
-#three figure:hover figcaption {
+#welcome .poloroid-expose {
+  transition: opacity 5s ease 0s;
   opacity: 1;
-  transform: translateY(0px);
-  transition: transform 0.4s, opacity 0.1s;
 }
 
-#four .overlay {
-  visibility: hidden;
+/*
+    Factoid 1
+*/
+
+.factoid-1 .impressive > p {
+  text-align: center;
+}
+
+.factoid-1 .impressive > p.off span {
   opacity: 0;
-  backface-visibility: hidden;
-  transition: opacity 0.5s, transform 0.4s, visibility 0s 0.5s;
-  transform: scale(1.3);
-  
-  color: #fff;
-  padding: 17.14rem;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(236, 172, 0, .9);
-  z-index: 1090;
+  transform: scale(.4);
 }
 
-#four .overlay.open {
-  visibility: visible;
+.factoid-1 .impressive > p.on span:nth-child(1) {
+  transition: opacity 0.8s ease, transform 0.7s ease-out;
   opacity: 1;
   transform: scale(1);
-  transition: opacity 0.5s, transform 0.4s;
 }
 
-#four .overlay .overlay-close {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
+.factoid-1 .impressive > p.on span:nth-child(2) {
+  transition: opacity 0.8s ease 0.2s, transform 0.7s ease-out 0.2s;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.factoid-1 .impressive > p.on span:nth-child(3) {
+  transition: opacity 0.8s ease 0.4s, transform 0.7s ease-out 0.4s;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.factoid-1 .impressive > div.off {
+  opacity: 0;
+}
+
+.factoid-1 .impressive > div.on {
+  transition: opacity 2s ease;
+  opacity: 1;
+}
+
+/*
+    Section: Community
+*/
+
+.section-intro.community {
+  background: #333 url('../img/section-community.jpg') no-repeat center center;
+}
+
+#community .grid {
+  margin: 210px 0;
+}
+
+#community .grid .row {
+  margin-bottom: 30px;
+}
+
+#community .mover figure {
+  position: relative;
   overflow: hidden;
-  text-indent: 200%;
-  border: none;
-  background: url(../img/cross.png) no-repeat center center;
-  color: transparent;
-  outline: none;
-  z-index: 100;
+}
+
+#community .mover figure img {
+  transition: opacity 0.35s, transform 0.35s;
+  transform: scale(1.12);
+}
+
+#community .mover:hover figure img {
+  opacity: 0.5;
+  transform: scale(1);
+}
+
+#community .mover figcaption {
+  padding: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#community .mover figcaption:before {
+  position: absolute;
+  top: 30px; right: 30px; bottom: 30px; left: 30px;
+  background-color: rgba(0,0,0,.4);
+  border: 1px solid #fff;
+  content: '';
+  transform: scale(1.1);
+}
+
+#community .mover figcaption:before,
+#community .mover figcaption p {
+  opacity: 0;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+#community .mover figcaption p {
+  color: #fff;
+  margin: 0;
+  padding: 30px;
+  transform: scale(1.5);
+  font-size: 1.3rem;
+}
+
+#community .mover:hover figcaption:before,
+#community .mover:hover figcaption p {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#community .grid .row:nth-child(1) > div:nth-child(1) {
+  transform: translate3d(-30px, -30px, 0) scale(1.1);
+}
+
+#community .grid .row:nth-child(1) > div:nth-child(2) {
+  transform: translate3d(0px, -30px, 0) scale(1.1);
+}
+
+#community .grid .row:nth-child(1) > div:nth-child(3) {
+  transform: translate3d(30px, -30px, 0) scale(1.1);
+}
+
+#community .grid .row:nth-child(2) > div:nth-child(1) {
+  transform: translate3d(-30px, 30px, 0) scale(1.1);
+}
+
+#community .grid .row:nth-child(2) > div:nth-child(2) {
+  transform: translate3d(0px, 30px, 0) scale(1.1);
+}
+
+#community .grid .row:nth-child(2) > div:nth-child(3) {
+  transform: translate3d(30px, 30px, 0) scale(1.1);
+}
+
+#community .grid.converge .row:nth-child(1) div:nth-child(1) {
+  transition: transform 0.3s ease-out;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+#community .grid.converge .row:nth-child(1) div:nth-child(2) {
+  transition: transform 0.3s ease-out 0.1s;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+#community .grid.converge .row:nth-child(1) div:nth-child(3) {
+  transition: transform 0.3s ease-out 0.2s;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+#community .grid.converge .row:nth-child(2) div:nth-child(1) {
+  transition: transform 0.3s ease-out 0.5s;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+#community .grid.converge .row:nth-child(2) div:nth-child(2) {
+  transition: transform 0.3s ease-out 0.4s;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+#community .grid.converge .row:nth-child(2) div:nth-child(3) {
+  transition: transform 0.3s ease-out 0.3s;
+  transform: translate3d(0,0,0) scale(1) !important;
 }

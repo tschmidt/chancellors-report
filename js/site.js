@@ -11,8 +11,8 @@ $(document).ready(function () {
   
   
   // Fade in the navbar after the intro have been scrolled
-  var $mainNav = $('body > .content-container > nav');
-  var $intro = $('#intro');
+  var $mainNav = $('body > header');
+  var $intro = $('#lead-in');
   $mainNav.hide();
   $(window).on('scroll', function () {
     if ($(this).scrollTop() > ($intro.height() - 50)) {
@@ -33,4 +33,6 @@ $(document).ready(function () {
     e.preventDefault();
     $(this).parent().removeClass('open');
   });
+  
+  $('.puppet').puppeteer();
 });
