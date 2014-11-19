@@ -26,7 +26,7 @@ $(document).ready(function () {
     e.preventDefault();
     var $this = $(this);
     $('.overlay').removeClass('open');
-    $this.siblings('.overlay').addClass('open');
+    $this.parents('.overlay-container').find('.overlay').addClass('open');
   });
   
   $('.overlay-close').on('click', function (e) {
