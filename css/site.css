@@ -21,7 +21,7 @@ blockquote {
   border: none;
 }
 
-p {
+p, ul, ol {
   font-size: 1.7rem;
   line-height: 1.5;
 }
@@ -171,6 +171,7 @@ p {
   animation: fadeIn 3s ease 0s;
   animation-fill-mode: forwards;
   backface-visibility: none;
+  margin-bottom: 120px;
 }
 
 #lead-in header {
@@ -235,7 +236,7 @@ p {
 }
 
 #welcome .poloroid {
-  transform: rotate(7deg) translateY(-35px);
+  transform: rotate(7deg) translateY(95px);
   backface-visibility: hidden;
 }
 
