@@ -208,6 +208,132 @@ img.img-non-responsive {
 }
 
 /*
+    Image Grid
+*/
+
+.grid {
+  margin: 210px 0;
+}
+
+.grid .date {
+  display: block;
+  font-size: .9rem;
+  padding: 10px 0;
+  text-align: right;
+}
+
+.grid .row [class*='col-'] {
+  margin-bottom: 30px;
+}
+
+.mover figure {
+  position: relative;
+  overflow: hidden;
+}
+
+.mover figure img {
+  transition: opacity 0.35s, transform 0.35s;
+  transform: scale(1.12);
+}
+
+.mover:hover figure img {
+  opacity: 0.5;
+  transform: scale(1);
+}
+
+.mover figcaption {
+  padding: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mover figcaption:before {
+  position: absolute;
+  top: 30px; right: 30px; bottom: 30px; left: 30px;
+  background-color: rgba(0,0,0,.4);
+  border: 1px solid #fff;
+  content: '';
+  transform: scale(1.1);
+}
+
+.mover figcaption:before,
+.mover figcaption p {
+  opacity: 0;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+.mover figcaption p {
+  color: #fff;
+  margin: 0;
+  padding: 30px;
+  transform: scale(1.5);
+  font-size: 1.3rem;
+}
+
+.mover:hover figcaption:before,
+.mover:hover figcaption p {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.grid .row:nth-child(1) > div:nth-child(1) {
+  transform: translate3d(-30px, -30px, 0) scale(1.1);
+}
+
+.grid .row:nth-child(1) > div:nth-child(2) {
+  transform: translate3d(0px, -30px, 0) scale(1.1);
+}
+
+.grid .row:nth-child(1) > div:nth-child(3) {
+  transform: translate3d(30px, -30px, 0) scale(1.1);
+}
+
+.grid .row:nth-child(1) > div:nth-child(4) {
+  transform: translate3d(-30px, 30px, 0) scale(1.1);
+}
+
+.grid .row:nth-child(1) > div:nth-child(5) {
+  transform: translate3d(0px, 30px, 0) scale(1.1);
+}
+
+.grid .row:nth-child(1) > div:nth-child(6) {
+  transform: translate3d(30px, 30px, 0) scale(1.1);
+}
+
+.grid.converge .row:nth-child(1) div:nth-child(1) {
+  transition: transform 0.3s ease-out;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+.grid.converge .row:nth-child(1) div:nth-child(2) {
+  transition: transform 0.3s ease-out 0.1s;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+.grid.converge .row:nth-child(1) div:nth-child(3) {
+  transition: transform 0.3s ease-out 0.2s;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+.grid.converge .row:nth-child(1) div:nth-child(4) {
+  transition: transform 0.3s ease-out 0.5s;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+.grid.converge .row:nth-child(1) div:nth-child(5) {
+  transition: transform 0.3s ease-out 0.4s;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+.grid.converge .row:nth-child(1) div:nth-child(6) {
+  transition: transform 0.3s ease-out 0.3s;
+  transform: translate3d(0,0,0) scale(1) !important;
+}
+
+/*
     Animation Keyframes
 */
 
@@ -409,131 +535,13 @@ img.img-non-responsive {
 }
 
 /*
-    Section: Community
+    Section Intros
 */
 
 .section-intro.community {
-  background: #333 url('../img/section-community.jpg') no-repeat center center;
+  background: #333 url('../img/section-intro-community.jpg') no-repeat center center;
 }
 
-#community .grid {
-  margin: 210px 0;
-}
-
-#community .grid .date {
-  display: block;
-  font-size: .9rem;
-  padding: 10px 0;
-  text-align: right;
-}
-
-#community .grid .row [class*='col-'] {
-  margin-bottom: 30px;
-}
-
-#community .mover figure {
-  position: relative;
-  overflow: hidden;
-}
-
-#community .mover figure img {
-  transition: opacity 0.35s, transform 0.35s;
-  transform: scale(1.12);
-}
-
-#community .mover:hover figure img {
-  opacity: 0.5;
-  transform: scale(1);
-}
-
-#community .mover figcaption {
-  padding: 3rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#community .mover figcaption:before {
-  position: absolute;
-  top: 30px; right: 30px; bottom: 30px; left: 30px;
-  background-color: rgba(0,0,0,.4);
-  border: 1px solid #fff;
-  content: '';
-  transform: scale(1.1);
-}
-
-#community .mover figcaption:before,
-#community .mover figcaption p {
-  opacity: 0;
-  transition: opacity 0.35s, transform 0.35s;
-}
-
-#community .mover figcaption p {
-  color: #fff;
-  margin: 0;
-  padding: 30px;
-  transform: scale(1.5);
-  font-size: 1.3rem;
-}
-
-#community .mover:hover figcaption:before,
-#community .mover:hover figcaption p {
-  opacity: 1;
-  transform: scale(1);
-}
-
-#community .grid .row:nth-child(1) > div:nth-child(1) {
-  transform: translate3d(-30px, -30px, 0) scale(1.1);
-}
-
-#community .grid .row:nth-child(1) > div:nth-child(2) {
-  transform: translate3d(0px, -30px, 0) scale(1.1);
-}
-
-#community .grid .row:nth-child(1) > div:nth-child(3) {
-  transform: translate3d(30px, -30px, 0) scale(1.1);
-}
-
-#community .grid .row:nth-child(1) > div:nth-child(4) {
-  transform: translate3d(-30px, 30px, 0) scale(1.1);
-}
-
-#community .grid .row:nth-child(1) > div:nth-child(5) {
-  transform: translate3d(0px, 30px, 0) scale(1.1);
-}
-
-#community .grid .row:nth-child(1) > div:nth-child(6) {
-  transform: translate3d(30px, 30px, 0) scale(1.1);
-}
-
-#community .grid.converge .row:nth-child(1) div:nth-child(1) {
-  transition: transform 0.3s ease-out;
-  transform: translate3d(0,0,0) scale(1) !important;
-}
-
-#community .grid.converge .row:nth-child(1) div:nth-child(2) {
-  transition: transform 0.3s ease-out 0.1s;
-  transform: translate3d(0,0,0) scale(1) !important;
-}
-
-#community .grid.converge .row:nth-child(1) div:nth-child(3) {
-  transition: transform 0.3s ease-out 0.2s;
-  transform: translate3d(0,0,0) scale(1) !important;
-}
-
-#community .grid.converge .row:nth-child(1) div:nth-child(4) {
-  transition: transform 0.3s ease-out 0.5s;
-  transform: translate3d(0,0,0) scale(1) !important;
-}
-
-#community .grid.converge .row:nth-child(1) div:nth-child(5) {
-  transition: transform 0.3s ease-out 0.4s;
-  transform: translate3d(0,0,0) scale(1) !important;
-}
-
-#community .grid.converge .row:nth-child(1) div:nth-child(6) {
-  transition: transform 0.3s ease-out 0.3s;
-  transform: translate3d(0,0,0) scale(1) !important;
+.section-intro.faculty-staff {
+  background: #333 url('../img/section-intro-faculty-staff.jpg') no-repeat center center;
 }
