@@ -122,11 +122,19 @@ img.img-non-responsive {
 .story-supporting figure {
   position: relative;
   overflow: hidden;
+  backface-visibility: hidden;
 }
 
 .story-supporting figure img,
 .story-supporting figure h3 {
   transition: transform 0.35s;
+}
+
+.story-supporting figure h3 {
+  color: #fff;
+  text-shadow: 0 1px 0 #353535;
+  min-width: 100%;
+  margin: 0;
 }
 
 .story-supporting figure img {
@@ -138,6 +146,7 @@ img.img-non-responsive {
   position: absolute;
   bottom: 0; left: 0;
   padding: 30px;
+  margin: 0;
 }
 
 .story-supporting figure p {
@@ -145,7 +154,8 @@ img.img-non-responsive {
   color: #fff;
   text-transform: none;
   opacity: 0;
-  transition: opacity 0.25s, transform 0.35s;
+  min-width: 100%;
+  transition: opacity 0.1s 0.25s, transform 0.35s;
   transform: translate3d(0, 100%, 0);
 }
 
@@ -156,6 +166,7 @@ img.img-non-responsive {
 .story-supporting figure:hover p {
   opacity: 1;
   transform: translate3d(0,0,0);
+  transition: opacity 0.1s, transform 0.35s;
 }
 
 /*
@@ -197,7 +208,7 @@ img.img-non-responsive {
   overflow: hidden;
   text-indent: 200%;
   border: none;
-  background: url(../img/cross.png) no-repeat center center;
+  background: url(../img/chrome/cross.png) no-repeat center center;
   color: transparent;
   outline: none;
   z-index: 100;
@@ -410,7 +421,7 @@ img.img-non-responsive {
 */
 
 #lead-in {
-  background: transparent url('../img/welding.jpg') no-repeat center center;
+  background: transparent url('../img/lead-in/welding.jpg') no-repeat center center;
   position: relative;
   opacity: 0;
   animation: fadeIn 3s ease 0s;
@@ -539,9 +550,33 @@ img.img-non-responsive {
 */
 
 .section-intro.community {
-  background: #333 url('../img/section-intro-community.jpg') no-repeat center center;
+  background: #333 url('../img/section-intros/section-intro-community.jpg') no-repeat center center;
 }
 
 .section-intro.faculty-staff {
-  background: #333 url('../img/section-intro-faculty-staff.jpg') no-repeat center center;
+  background: #333 url('../img/section-intros/section-intro-faculty-staff.jpg') no-repeat center center;
+}
+
+.section-intro.grow {
+  background: #333 url('../img/section-intros/section-intro-grow.jpg') no-repeat center center;
+}
+
+.section-intro.create {
+  background: #333 url('../img/section-intros/section-intro-create.jpg') no-repeat center center;
+}
+
+.section-intro.fuel {
+  background: #333 url('../img/section-intros/section-intro-fuel.jpg') no-repeat center center;
+}
+
+.section-intro.ship {
+  background: #333 url('../img/section-intros/section-intro-ship.jpg') no-repeat center center;
+}
+
+.section-intro.build {
+  background: #333 url('../img/section-intros/section-intro-build.jpg') no-repeat center center;
+}
+
+.section-intro.heal {
+  background: #333 url('../img/section-intros/section-intro-heal.jpg') no-repeat center center;
 }
