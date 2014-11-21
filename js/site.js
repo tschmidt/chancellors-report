@@ -35,4 +35,12 @@ $(document).ready(function () {
   });
   
   $('.puppet').puppeteer();
+  
+  $('.navbar-nav a').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    $('html, body').stop().animate({
+      scrollTop: $($this.attr('href')).offset().top
+    }, 1500, 'easeInOutCubic');
+  })
 });

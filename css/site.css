@@ -137,6 +137,10 @@ img.img-non-responsive {
   margin: 0;
 }
 
+.story-supporting figure h3.invisible {
+  display: none;
+}
+
 .story-supporting figure img {
   backface-visibility: hidden;
 }
@@ -290,6 +294,10 @@ img.img-non-responsive {
   transform: scale(1);
 }
 
+.grid .row > div {
+  opacity: 0;
+}
+
 .grid .row:nth-child(1) > div:nth-child(1) {
   transform: translate3d(-30px, -30px, 0) scale(1.1);
 }
@@ -315,32 +323,38 @@ img.img-non-responsive {
 }
 
 .grid.converge .row:nth-child(1) div:nth-child(1) {
-  transition: transform 0.3s ease-out;
+  transition: opacity 0.7s ease, transform 0.7s ease-out;
+  opacity: 1;
   transform: translate3d(0,0,0) scale(1) !important;
 }
 
 .grid.converge .row:nth-child(1) div:nth-child(2) {
-  transition: transform 0.3s ease-out 0.1s;
+  transition: opacity 0.7s ease, transform 0.7s ease-out;
+  opacity: 1;
   transform: translate3d(0,0,0) scale(1) !important;
 }
 
 .grid.converge .row:nth-child(1) div:nth-child(3) {
-  transition: transform 0.3s ease-out 0.2s;
+  transition: opacity 0.7s ease, transform 0.7s ease-out;
+  opacity: 1;
   transform: translate3d(0,0,0) scale(1) !important;
 }
 
 .grid.converge .row:nth-child(1) div:nth-child(4) {
-  transition: transform 0.3s ease-out 0.5s;
+  transition: opacity 0.7s ease, transform 0.7s ease-out;
+  opacity: 1;
   transform: translate3d(0,0,0) scale(1) !important;
 }
 
 .grid.converge .row:nth-child(1) div:nth-child(5) {
-  transition: transform 0.3s ease-out 0.4s;
+  transition: opacity 0.7s ease, transform 0.7s ease-out;
+  opacity: 1;
   transform: translate3d(0,0,0) scale(1) !important;
 }
 
 .grid.converge .row:nth-child(1) div:nth-child(6) {
-  transition: transform 0.3s ease-out 0.3s;
+  transition: opacity 0.7s ease, transform 0.7s ease-out;
+  opacity: 1;
   transform: translate3d(0,0,0) scale(1) !important;
 }
 
