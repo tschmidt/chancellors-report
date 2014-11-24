@@ -74,7 +74,11 @@ dd:not(:last-child) {
   border-radius: 2px;
   border: 1px solid #9c9c9c;
   padding: 7px;
-  padding-bottom: 65px;
+}
+
+.poloroid figcaption {
+  width: 45%;
+  margin: 15px auto;
 }
 
 .poloroid span {
