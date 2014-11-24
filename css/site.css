@@ -21,7 +21,7 @@ blockquote {
   border: none;
 }
 
-p, ul, ol {
+p, ul, ol, dl {
   font-size: 1.7rem;
   line-height: 1.5;
 }
@@ -32,6 +32,14 @@ img {
 
 img.img-non-responsive {
   min-width: initial;
+}
+
+dt {
+  margin-bottom: 10px;
+}
+
+dd:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 /*
@@ -163,14 +171,24 @@ img.img-non-responsive {
   transform: translate3d(0, 100%, 0);
 }
 
-.story-supporting figure:hover img {
+.story-supporting:not(.no-hover) figure:hover img {
   transform: translate3d(0, -80px, 0);
 }
 
-.story-supporting figure:hover p {
+.story-supporting:not(.no-hover) figure:hover p {
   opacity: 1;
   transform: translate3d(0,0,0);
   transition: opacity 0.1s, transform 0.35s;
+}
+
+.story-supporting.alt p {
+  font-size: 1em;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.story-supporting [class*='col-'] {
+  margin-bottom: 30px;
 }
 
 /*
@@ -298,7 +316,7 @@ img.img-non-responsive {
   opacity: 0;
 }
 
-.grid .row:nth-child(1) > div:nth-child(1) {
+.grid .row:nth-child(1) > div:nth-of-type(1):not(.overlay) {
   transform: translate3d(-30px, -30px, 0) scale(1.1);
 }
 
@@ -322,7 +340,7 @@ img.img-non-responsive {
   transform: translate3d(30px, 30px, 0) scale(1.1);
 }
 
-.grid.converge .row:nth-child(1) div:nth-child(1) {
+.grid.converge .row:nth-child(1) div:nth-of-type(1):not(.overlay) {
   transition: opacity 0.7s ease, transform 0.7s ease-out;
   opacity: 1;
   transform: translate3d(0,0,0) scale(1) !important;
@@ -593,4 +611,8 @@ img.img-non-responsive {
 
 .section-intro.heal {
   background: #333 url('../img/section-intros/section-intro-heal.jpg') no-repeat center center;
+}
+
+.section-intro.foundation {
+  background: #333 url('../img/section-intros/section-intro-foundation.jpg') no-repeat center center;
 }
