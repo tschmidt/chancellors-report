@@ -1,3 +1,15 @@
+// shim layer with setTimeout fallback
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          window.oRequestAnimationFrame      ||
+          window.msRequestAnimationFrame     ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
 /* detect touch */
 if("ontouchstart" in window){
     document.documentElement.className = document.documentElement.className + " touch";
@@ -92,8 +104,12 @@ function parallaxPosition(e){
     });
 }
 if(!$("html").hasClass("touch")){
-    $(window).resize(parallaxPosition);
+    $(window).on('resize', function () {
+      window.requestAnimationFrame(parallaxPosition);
+    });
     //$(window).focus(parallaxPosition);
-    $(window).scroll(parallaxPosition);
+    $(window).on('scroll', function () {
+      window.requestAnimationFrame(parallaxPosition);
+    });
     parallaxPosition();
 }
