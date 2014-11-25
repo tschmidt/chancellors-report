@@ -626,6 +626,40 @@ dd:not(:last-child) {
   text-align: center;
 }
 
+.factoid-4 {
+  background-color: #484848;
+  color: #fff;
+}
+
+.factoid-4 .impressive-facts img + ul {
+  margin-left: 120px;
+}
+
+.factoid-4 .impressive-facts img {
+  transform: translateX(-90px);
+  opacity: 0;
+}
+
+.factoid-4 .impressive-facts ul {
+  transform: translateX(90px);
+  opacity: 0;
+}
+
+.factoid-4 .impressive-facts img.on,
+.factoid-4 .impressive-facts ul.on {
+  transition: transform 0.8s ease-out, opacity 0.8s ease;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.factoid-4 .impressive-facts:after {
+  content: '';
+  clear: both;
+  overflow: hidden;
+  display: block;
+  margin-bottom: 30px;
+}
+
 /*
     Section Intros
 */
