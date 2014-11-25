@@ -203,7 +203,7 @@ dd:not(:last-child) {
   visibility: hidden;
   opacity: 0;
   backface-visibility: hidden;
-  transition: opacity 0.5s, transform 0.4s, visibility 0s 0.5s;
+  transition: opacity 0.5s, transform 0.4s, visibility 0s 0.5s, z-index 3s;
   transform: scale(1.3);
   overflow-y: auto;
   
@@ -215,7 +215,7 @@ dd:not(:last-child) {
   top: 0;
   left: 0;
   background: rgba(236, 172, 0, .97);
-  z-index: 1090;
+  z-index: -100;
 }
 
 .overlay.open {
@@ -223,6 +223,7 @@ dd:not(:last-child) {
   opacity: 1;
   transform: scale(1);
   transition: opacity 0.5s, transform 0.4s;
+  z-index: 1090;
 }
 
 .overlay .overlay-close {
@@ -438,7 +439,6 @@ dd:not(:last-child) {
 }
 
 .factoid .impressive > p {
-  font-size: 22rem;
   position: relative;
 }
 
@@ -456,11 +456,20 @@ dd:not(:last-child) {
     Section: Lead-In
 */
 
+.lead-in-backdrop {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #383838;
+}
+
 #lead-in {
   background: transparent url('../img/lead-in/welding.jpg') no-repeat center center;
   position: relative;
   opacity: 0;
-  animation: fadeIn 3s ease 0s;
+  animation: fadeIn 3s ease .8s;
   animation-fill-mode: forwards;
   backface-visibility: none;
   margin-bottom: 120px;
@@ -483,7 +492,7 @@ dd:not(:last-child) {
   margin: 0;
   padding: 30px 0;
   opacity: 0;
-  animation: fadeInUp 1.2s ease 1s;
+  animation: fadeInUp 1.2s ease 1.95s;
   animation-fill-mode: forwards;
 }
 
@@ -492,7 +501,7 @@ dd:not(:last-child) {
   margin: 0;
   padding: 0;
   opacity: 0;
-  animation: fadeInUp 1.2s ease 1.1s;
+  animation: fadeInUp 1.2s ease 2.15s;
   animation-fill-mode: forwards;
 }
 
@@ -547,11 +556,12 @@ dd:not(:last-child) {
 
 .factoid-1 .impressive > p {
   text-align: center;
+  font-size: 22rem;
 }
 
 .factoid-1 .impressive > p.off span {
   opacity: 0;
-  transform: scale(.4);
+  transform: scale(0.4);
 }
 
 .factoid-1 .impressive > p.on span:nth-child(1) {
@@ -579,6 +589,41 @@ dd:not(:last-child) {
 .factoid-1 .impressive > div.on {
   transition: opacity 2s ease;
   opacity: 1;
+}
+
+/*
+    Factoid 2
+*/
+
+.factoid-2 .impressive-figure,
+.factoid-3 .impressive-figure {
+  font-size: 20rem;
+  text-align: center;
+  transform: translateX(-90px);
+  opacity: 0;
+}
+
+.factoid-2 .impressive-support,
+.factoid-3 .impressive-support {
+  line-height: 1.5;
+  padding: 132px 0;
+  transform: translateX(90px);
+  opacity: 0;
+}
+
+.factoid-2 .impressive-figure.on,
+.factoid-2 .impressive-support.on,
+.factoid-3 .impressive-figure.on,
+.factoid-3 .impressive-support.on {
+  transition: transform 0.8s ease-out, opacity 0.8s ease;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.factoid-3 .impressive-support {
+  font-size: 2.4rem;
+  padding: 30px 0;
+  text-align: center;
 }
 
 /*
