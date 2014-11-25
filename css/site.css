@@ -280,7 +280,7 @@ dd:not(:last-child) {
 }
 
 .mover figcaption {
-  padding: 3rem;
+  padding: 1rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -290,8 +290,8 @@ dd:not(:last-child) {
 
 .mover figcaption:before {
   position: absolute;
-  top: 30px; right: 30px; bottom: 30px; left: 30px;
-  background-color: rgba(0,0,0,.4);
+  top: 20px; right: 20px; bottom: 20px; left: 20px;
+  background-color: rgba(0,0,0,.7);
   border: 1px solid #fff;
   content: '';
   transform: scale(1.1);
@@ -497,7 +497,7 @@ dd:not(:last-child) {
 }
 
 #lead-in header h2 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 0;
   padding: 0;
   opacity: 0;
