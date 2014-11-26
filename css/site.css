@@ -130,6 +130,11 @@ dd:not(:last-child) {
   left: 0;
   padding: 30px;
   text-shadow: 0 0 5px rgba(0,0,0,.6);
+  background: rgba(0,0,0,.4);
+}
+
+.story-main div:not(.overlay) a {
+  color: rgb(236, 172, 0);
 }
 
 .story-supporting figure {
