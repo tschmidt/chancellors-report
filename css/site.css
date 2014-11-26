@@ -663,6 +663,31 @@ dd:not(:last-child) {
 }
 
 /*
+    Socials
+*/
+
+.socials {
+  text-align: center;
+  padding: 220px 0 0;
+}
+
+.socials li {
+  padding: 0 20px;
+}
+
+.socials a {
+  color: rgb(236, 172, 0);
+}
+
+.socials svg {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
+  fill: rgb(236, 172, 0);
+}
+
+/*
     Section Intros
 */
 
